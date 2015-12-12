@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js</title>
+    <link rel="stylesheet" href="frameworks/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app" class="container">
+    <h1>{{message}}</h1>
+</div>
+<script src="frameworks/js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:"Hello Vue.js!"
+        }
+    })
+</script>
+</body>
+</html>
