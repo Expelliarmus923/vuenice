@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js</title>
+    <link rel="stylesheet" href="frameworks/css/bootstrap.min.css">
+</head>
+<body>
+<div id="example">
+    <h2>a={{ a }},b={{ b }}</h2>
+</div>
+<script src="frameworks/js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#example",
+        data:{
+            a:1
+        },
+        computed:{
+            b:function(){
+                return this.a+10;
+            }
+        }
+    })
+</script>
+</body>
+</html>

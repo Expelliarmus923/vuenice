@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js</title>
+    <link rel="stylesheet" href="frameworks/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app" class="container">
+    <div class="row">
+        <div class="col-md-6"><input class="form-control" v-model="newTodo" v-on:keyup.enter="addTodo"></div>
+    </div>
+    <ul>
+        <li v-for="todo in todos">
+            <span>{{todo.text}}</span>
+            <button class="btn btn-warning" v-on:click="removeTodo">X</button>
+        </li>
+    </ul>
+</div>
+<script src="frameworks/js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            newTodo:"",
+            todos:[
+                {text:"some todos"}
+            ]
+        },
+        methods:{
+            addTodo:function(){
+                var text = this.newTodo.trim();
+                if (text) {
+                    this.todos.push({ text: text });
+                    this.newTodo = ''
+                }
+            },
+            removeTodo: function (index) {
+                this.todos.splice(index, 1)
+            }
+        }
+    })
+</script>
+</body>
+</html>
